@@ -1,10 +1,9 @@
-import './App.css';
+import React from "react";
 import CartItem from './Components/CartItem';
 
 function App() {
   return (
     <div className="App">
-      <h1>HELL</h1>
       <CartItem />
     </div>
   );
