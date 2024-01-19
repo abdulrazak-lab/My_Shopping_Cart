@@ -1,17 +1,17 @@
 import React from 'react';
 
 class CartItem extends React.Component {
-    constructor () {
-        super();
-        this.state = {
-            price: 199,
-            title: "Mobile Phone",
-            qty: 1,
-            img: ""
-        }
+    
+
+    increaseQuantity = () => {
+       
     }
+        
+    
+     
   render() {
-    const {price, title, qty} = this.state;
+    console.log("this.props", this.props)
+    const {price, title, qty} = this.props.product;
     return (
       <div  className="cart-item">
         <div className="left-block">
@@ -25,9 +25,25 @@ class CartItem extends React.Component {
 
             <div className="cart-item-actions">
         
-                <img alt='increase' className='action-icons' src="https://cdn-icons-png.flaticon.com/128/992/992651.png" />
-                <img alt='decrease' className='action-icons' src="https://cdn-icons-png.flaticon.com/128/1828/1828906.png" />
-                <img alt='delete' className='action-icons' src="https://cdn-icons-png.flaticon.com/128/1214/1214428.png" />
+                <img 
+                 alt='increase'
+                 className='action-icons' 
+                 src="https://cdn-icons-png.flaticon.com/128/992/992651.png"
+                 onClick={this.increaseQuantity} 
+                 />
+
+                <img 
+                alt='decrease' 
+                className='action-icons' 
+                src="https://cdn-icons-png.flaticon.com/128/1828/1828906.png" 
+                />
+
+                <img 
+                alt='delete' 
+                className='action-icons' 
+                src="https://cdn-icons-png.flaticon.com/128/1214/1214428.png" 
+                />
+
             </div>
         </div>
       </div>
