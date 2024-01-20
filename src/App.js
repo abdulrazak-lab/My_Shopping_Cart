@@ -62,17 +62,40 @@ handleDeleteProdcuts = (id) => {
     })
 }
 
+getCartCount = () => {
+  const {products} = this.state;
+
+  let count = 0;
+
+  products.forEach((product) => {
+    count += product.qty
+  })
+
+  return count;
+}
+
+getCartTotal = () => {
+  const {products} = this.state;
+  let cartTotal = 0;
+  products.map((product) => {
+    cartTotal = cartTotal + product.qty * product.price
+
+  })
+  return cartTotal;
+}
+
   render () {
     const {products} = this.state
   return (
     <div className="App">
-      <Navbar />
+      <Navbar count={this.getCartCount()} />
       <Cart 
         products={products}
        onIncreaseQuantity={this.handleIncreaseQuantity}
        onDecreaseQuantity={this.handleDecreaseQuantity} 
        onDeleteProdcuts={this.handleDeleteProdcuts}
       />
+      <div style={{padding: 10, fontSize: 20}}>TOTAL: {this.getCartTotal()}</div>
     </div>
   );
 }
