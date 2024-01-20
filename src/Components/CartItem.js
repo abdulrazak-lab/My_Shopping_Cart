@@ -2,12 +2,6 @@ import React from 'react';
 
 class CartItem extends React.Component {
     
-
-    increaseQuantity = () => {
-       
-    }
-        
-    
      
   render() {
     console.log("this.props", this.props)
@@ -19,23 +13,22 @@ class CartItem extends React.Component {
         </div>
         <div className="right-block">
                 <div style={{fontSize: 25}}>{title}</div>
-            <div style={{color: "#777"}}>₵: {198}</div>
-            <div style={{color: "#777"}}>Qty: {1}</div>
-            <div style={{color: "#777"}}>Description: Qualitity bags</div>
-
+            <div style={{color: "#777"}}>₵: {price}</div>
+            <div style={{color: "#777"}}>Qty: {qty}</div>
             <div className="cart-item-actions">
         
                 <img 
                  alt='increase'
                  className='action-icons' 
                  src="https://cdn-icons-png.flaticon.com/128/992/992651.png"
-                 onClick={this.increaseQuantity} 
+                 onClick={() => this.props.onIncreaseQuantity(this.props.product)} 
                  />
 
                 <img 
                 alt='decrease' 
                 className='action-icons' 
-                src="https://cdn-icons-png.flaticon.com/128/1828/1828906.png" 
+                src="https://cdn-icons-png.flaticon.com/128/1828/1828906.png"
+                onClick={() => this.props.onDecreaseQuantity(this.props.product)}  
                 />
 
                 <img 
