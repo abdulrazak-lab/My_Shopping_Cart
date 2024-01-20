@@ -7,36 +7,37 @@ class Navbar extends React.Component {
         <div style={styles.cartIconContainer}>
             <img style={styles.cartIcon} src="https://image.shutterstock.com/image-vector/shopping-cart-vector-icon-flat-260nw-1690453492.jpg" alt='cart-icon' />
             <span style={styles.cartCount}>3</span>
-        </div>
-      
+        </div >
     </div>
   )
 }
 }
 
+
 const styles = {
-    cartIcon: { 
-        height: 32,
+    cartIcon: {
+        height:32,
         marginRight: 20
     },
     nav: {
         height: 70,
         background: "#4267b2",
         display: "flex",
-        justifyContent: "center",
+        justifyContent: "flex-end",
         alignItems: "center"
     },
     cartIconContainer: {
-        positon: "relative"
+        position: "relative"
     },
     cartCount: {
         background: "yellow",
-        borderRadius: "50",
-        padding: "4px, 8px",
+        borderRadius: "50%",
+        padding: "4px 8px",
         position: "absolute",
         right: 0,
         top: -9
     }
-}
+    }
+
 
 export default Navbar
